@@ -9,373 +9,118 @@
         href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #fafafc;
-            font-family: 'Inter', sans-serif;
-            color: #1e1f2a;
-            line-height: 1.5;
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            padding: 1.5rem 0 1rem 0;
-            border-bottom: 1px solid #e9eef3;
-        }
-
-        .logo {
-            font-weight: 800;
-            font-size: 1.9rem;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #1E2A5E, #556B9D);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .logo span {
-            background: #1E2A5E;
-            color: white;
-            font-size: 1.2rem;
-            width: 36px;
-            height: 36px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            background: linear-gradient(145deg, #25386b, #16203f);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            font-weight: 500;
-            color: #2c3e4e;
-            transition: 0.2s;
-            font-size: 1rem;
-        }
-
-        .nav-links a:hover {
-            color: #1E2A5E;
-        }
-
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-            margin: 3rem 0 3rem 0;
-            align-items: center;
-        }
-
-        .top-image {
-            width: 100%;
-            height: 550px;
-
-            object-fit: cover;
-            border-radius: 1.5rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .media-col {
-            flex: 1.2;
-            width: 260px;
-        }
-
-        .media-col .image-wrapper {
-            background: #eef2f7;
-            border-radius: 2rem;
-            overflow: hidden;
-            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease;
-        }
-
-        .image-wrapper img {
-            width: 70%;
-            display: block;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-        }
-
-        .bio-col {
-            flex: 1;
-        }
-
-        .name-title {
-            font-size: 3rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            background: linear-gradient(120deg, #1E2A5E, #3a5795);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
-        }
-
-        .bio-text {
-            font-size: 1.1rem;
-            color: #2c3e50;
-            margin: 1.5rem 0;
-            background: #ffffffcc;
-            padding: 0.2rem 0;
-        }
-
-        .bio-highlight {
-            background: #f0f4fa;
-            padding: 1.4rem;
-            border-radius: 1.5rem;
-            border-left: 4px solid #1E2A5E;
-            margin: 1.8rem 0;
-            font-weight: 400;
-        }
-
-        .info-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin: 4rem 0 3rem;
-            background: white;
-            border-radius: 2rem;
-            padding: 2rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
-        }
-
-        .info-card {
-            flex: 1;
-            min-width: 180px;
-        }
-
-        .info-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            border-left: 3px solid #1E2A5E;
-            padding-left: 0.75rem;
-        }
-
-        .address-detail {
-            font-style: normal;
-            line-height: 1.6;
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-        }
-
-        .address-icons {
-            display: flex;
-            gap: 8.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .address-icons a {
-            text-decoration: none;
-            color: #1E2A5E;
-            font-size: 2.5rem;
-            transition: 0.3s;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .address-icons a:hover {
-            color: #ff6b4a;
-            transform: scale(1.15);
-        }
-
-        .quick-links {
-            list-style: none;
-            margin-top: 0.5rem;
-        }
-
-        .quick-links li {
-            margin: 0.7rem 0;
-        }
-
-        .quick-links a {
-            text-decoration: none;
-            color: #1E2A5E;
-            font-weight: 500;
-            transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .quick-links a:hover {
-            color: #ff6b4a;
-            transform: translateX(5px);
-        }
-
-        .map-placeholder {
-            background: #e2e8f0;
-            border-radius: 1.2rem;
-            height: 160px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            font-size: 0.85rem;
-            color: #2c3e50;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%2394a3b8"><path d="M50,20 L70,40 L50,60 L30,40 Z" opacity="0.3"/><circle cx="50" cy="42" r="6" fill="%234b6e8f"/></svg>');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 70px;
-        }
-
-        .map-placeholder span {
-            background: rgba(255, 255, 240, 0.9);
-            padding: 0.3rem 1rem;
-            border-radius: 30px;
-            font-weight: 500;
-            backdrop-filter: blur(2px);
-        }
-
-        .embed-map {
-            width: 100%;
-            height: 160px;
-            border: 0;
-            border-radius: 1rem;
-            filter: grayscale(0.1) contrast(0.98);
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem 0 2.5rem;
-            border-top: 1px solid #eef2f8;
-            font-size: 0.85rem;
-            color: #5b6e8c;
-            margin-top: 1rem;
-        }
-
-        @media (max-width: 780px) {
-            .container {
-                padding: 0 1.5rem;
-            }
-
-            .navbar {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .hero {
-                flex-direction: column;
-            }
-
-            .name-title {
-                font-size: 2.3rem;
-            }
-
-            .info-grid {
-                flex-direction: column;
-            }
-        }
-
-        button,
-        a {
-            cursor: pointer;
-        }
-
-        .video-wrapper:hover {
-            transform: scale(0.99);
-        }
-    </style>
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
 
     <div class="container">
-        <nav class="navbar">
-            <div class="logo">
-                Khothatso
-            </div>
-            <div class="nav-links">
-                <a href="#">Home</a>
-                <a href="#about">About me</a>
-                <a href="#contact">Contact Us</a>
-            </div>
-        </nav>
-
-        <div class="hero">
-            <img src="/assets/images/me.jpg" alt="Hero image" class="top-image" />
-
-            <div class="bio-col" id="about">
-                <div class="name-title">Khothatso Ramotholo</div>
-                <div class="bio-text">
-                    <strong>Junior Software Developer</strong> — creating immersive web experiences.
+        <header class="header">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="/assets/images/KR.png" />
                 </div>
-                <div class="bio-highlight">
-                    I am a dedicated Junior Software Developer with skills in Java Spring Boot, SQL, and experience with
-                    front-end technologies like HTML, CSS, JavaScript, and Bootstrap. I want to grow into a Tech Lead
-                    role and am dedicated to learning and creating good solutions.
+                <div class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="#about">About me</a>
+                    <a href="#interests">Interests</a>
+                    <a href="#contact" class="nav-contact-btn">Contact Us</a>
                 </div>
-                <div class="about" >
-                    <div class="about-text">
-                        A Junior Software Developer with a passion to create robust web applications, a keen eye for
-                        detail and an
-                        excellent work ethic. With a strong foundation in Java, JavaScript, HTML, CSS, and SQL.
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero-top">
+                <h1>Welcome to My Portfolio</h1>
+                <p>Discover my projects, skills, and interests.</p>
+                <img src="/assets/images/me.jpg" alt="Hero image" class="top-image" />
+            </section>
+
+            <section class="hero-section" id="about">
+                <br>
+                <h2>About Me</h2>
+                <br>
+    <div class="hero">
+        <div class="bio-col" >
+                    <div class="name-title">Khothatso Ramotholo</div>
+                    <div class="bio-text"><strong>Junior Software Developer</strong> — creating immersive web experiences.</div>
+                    <div class="bio-highlight">
+                        I am a dedicated Junior Software Developer with skills in Java Spring Boot, SQL, and experience with front-end technologies like HTML, CSS, JavaScript, and Bootstrap. I want to grow into a Tech Lead role and am dedicated to learning and creating good solutions.
+                    </div>
+                </div>
+                <div class="media-col">
+                    <div class="image-wrapper"><img src="/assets/images/profileImage.jpg" alt="Profile image" /></div>
+                </div>
+    </div>
+                
+            </section>
+            <section class="interests-section" id="interests">
+                <br>
+                <h2>My Interests</h2>
+                <br>
+                <div class="interests">
+ <div class="interests-left">
+                    <div>
+                        <ul>
+                            <li>Web Development</li>
+                            <li>Gaming</li>
+                            <li>Artificial Intelligence</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="interests-right">
+                    <video src="/assets/videos/interests.mp4" controls>
+
+                    </video>
+                </div>
+                </div>
+               
+            </section>
+
+            <section class="contact" id="contact">
+                <div class="contact-form">
+                    <form action="" id="contactForm" class="form">
+                        <h2>Contact Me</h2>
+                        <p class="form-description">Send me a message and I'll reply soon.</p>
+                        <div class="form-row">
+                            <label for="name">Full Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <div class="form-row">
+                            <button type="submit">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+<hr>
+            <section class="info-grid" id="footer">
+                <div class="info-card">
+                    <address class="address-detail"><strong>Kwalunda,</strong><br>Matatiele,<br>4730,<br>South Africa</address>
+                    <div class="address-icons">
+                        <a href="https://github.com/KhothatsoKay" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://instagram.com/kay_jama" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/khothatso-ramotholo-57a843164/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
 
-            </div>
-            <div class="media-col">
-                <div class="image-wrapper">
-                    <img src="/assets/images/profileImage.jpg" alt="Profile image" />
+                <div class="info-card">
+                    <h3>🔗 additional quick links</h3>
                 </div>
-            </div>
-        </div>
 
-        <div class="info-grid" id="contact">
-            <div class="info-card">
-                <address class="address-detail">
-                    <strong>Kwalunda</strong><br>
-                    Matatiele<br>
-                    4730<br>
-                    South Africa
-                </address>
-                <div class="address-icons">
-                    <a href="https://github.com/KhothatsoKay" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://instagram.com/kay_jama" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/khothatso-ramotholo-57a843164/" target="_blank"><i
-                            class="fab fa-linkedin-in"></i></a>
+                <div class="info-card">
+                    <iframe class="embed-map" width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=28.726673126220707%2C-30.387832284227883%2C28.85438919067383%2C-30.295387491876028&amp;layer=mapnik" style="border: 1px solid black"></iframe>
+                    <br /><small><a href="https://www.openstreetmap.org/?#map=13/-30.34162/28.79053">View Larger Map</a></small>
                 </div>
-            </div>
-
-            <div class="info-card">
-                <h3>🔗 additional quick links</h3>
-            </div>
-
-            <div class="info-card">
-                <iframe class="embed-map" width="425" height="350"
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=28.726673126220707%2C-30.387832284227883%2C28.85438919067383%2C-30.295387491876028&amp;layer=mapnik"
-                    style="border: 1px solid black"></iframe>
-                <br /><small><a href="https://www.openstreetmap.org/?#map=13/-30.34162/28.79053">View Larger Map</a></small>
-            </div>
-        </div>
+            </section>
+        </main>
 
         <footer>
             <p>© 2026 Khothatso Ramotholo</p>
