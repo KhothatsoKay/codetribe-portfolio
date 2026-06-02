@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Khothatso Ramotholo - Portfolio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="header">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="/assets/images/KR.png" />
+                </div>
+                <div class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="#about">About me</a>
+                    <a href="#interests">Interests</a>
+                    <a href="#contact" class="nav-contact-btn">Contact Us</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero-top">
+                <h1>Welcome to My Portfolio</h1>
+                <p>Discover my projects, skills, and interests.</p>
+                <img src="/assets/images/me.jpg" alt="Hero image" class="top-image" />
+            </section>
+
+            <section class="hero-section" id="about">
+                <br>
+                <h2>About Me</h2>
+                <br>
+    <div class="hero">
+        <div class="bio-col" >
+                    <div class="name-title">Khothatso Ramotholo</div>
+                    <div class="bio-text"><strong>Junior Software Developer</strong> — creating immersive web experiences.</div>
+                    <div class="bio-highlight">
+                        I am a dedicated Junior Software Developer with skills in Java Spring Boot, SQL, and experience with front-end technologies like HTML, CSS, JavaScript, and Bootstrap. I want to grow into a Tech Lead role and am dedicated to learning and creating good solutions.
+                    </div>
+                </div>
+                <div class="media-col">
+                    <div class="image-wrapper"><img src="/assets/images/profileImage.jpg" alt="Profile image" /></div>
+                </div>
+    </div>
+                
+            </section>
+            <section class="interests-section" id="interests">
+                <br>
+                <h2>My Interests</h2>
+                <br>
+                <div class="interests">
+ <div class="interests-left">
+                    <div>
+                        <ul>
+                            <li>Web Development</li>
+                            <li>Gaming</li>
+                            <li>Artificial Intelligence</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="interests-right">
+                    <video src="/assets/videos/interests.mp4" controls>
+
+                    </video>
+                </div>
+                </div>
+               
+            </section>
+
+            <section class="contact" id="contact">
+                <div class="contact-form">
+                    <form action="" id="contactForm" class="form">
+                        <h2>Contact Me</h2>
+                        <p class="form-description">Send me a message and I'll reply soon.</p>
+                        <div class="form-row">
+                            <label for="name">Full Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <div class="form-row">
+                            <button type="submit">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+<hr>
+            <section class="info-grid" id="footer">
+                <div class="info-card">
+                    <address class="address-detail"><strong>Kwalunda,</strong><br>Matatiele,<br>4730,<br>South Africa</address>
+                    <div class="address-icons">
+                        <a href="https://github.com/KhothatsoKay" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://instagram.com/kay_jama" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/khothatso-ramotholo-57a843164/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>🔗 additional quick links</h3>
+                </div>
+
+                <div class="info-card">
+                    <iframe class="embed-map" width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=28.726673126220707%2C-30.387832284227883%2C28.85438919067383%2C-30.295387491876028&amp;layer=mapnik" style="border: 1px solid black"></iframe>
+                    <br /><small><a href="https://www.openstreetmap.org/?#map=13/-30.34162/28.79053">View Larger Map</a></small>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 Khothatso Ramotholo</p>
+        </footer>
+    </div>
+    <script>
+        (function () {
+
+            const links = document.querySelectorAll('.nav-links a, .quick-links a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const hash = this.getAttribute('href');
+                    if (hash && hash.startsWith('#') && hash.length > 1) {
+                        const targetId = hash.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            e.preventDefault();
+                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    } else if (hash && hash.startsWith('#')) {
+
+                    }
+                });
+            });
+
+        })();
+    </script>
+</body>
+
+</html>
