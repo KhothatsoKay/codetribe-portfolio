@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khothatso Ramotholo - Portfolio | About</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="/assets/images/KR.png" />
+                </div>
+                <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="nav-links" id="primary-navigation">
+                    <a href="/index.html">Home</a>
+                    <a href="/about.html">About me</a>
+                    <a href="/index.html#interests">Interests</a>
+                    <a href="/contact.html" class="nav-contact-btn">Contact Us</a>
+                </div>
+            </nav>
+        </header>
+        <section class="hero-section" id="about">
+            <br>
+            <h2>About Me</h2>
+            <br>
+            <div class="hero">
+                <div class="bio-col">
+                    <div class="name-title">Khothatso Ramotholo</div>
+                    <div class="bio-text"><strong>Junior Software Developer</strong> — creating immersive web
+                        experiences.</div>
+                    <div class="bio-highlight">
+                        I am a dedicated Junior Software Developer with skills in Java Spring Boot, SQL, and experience
+                        with front-end technologies like HTML, CSS, JavaScript, and Bootstrap. I want to grow into a
+                        Tech Lead role and am dedicated to learning and creating good solutions.
+                    </div>
+                </div>
+                <div class="media-col">
+                    <div class="image-wrapper"><img src="/assets/images/profileImage.jpg" alt="Profile image" /></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        (function () {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', () => {
+                    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                    navToggle.setAttribute('aria-expanded', String(!isExpanded));
+                    navLinks.classList.toggle('active');
+                });
+            }
+
+            const links = document.querySelectorAll('.nav-links a, .quick-links a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const hash = this.getAttribute('href');
+                    if (hash && hash.startsWith('#') && hash.length > 1) {
+                        const targetId = hash.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            e.preventDefault();
+                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+
+                    if (navLinks && navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

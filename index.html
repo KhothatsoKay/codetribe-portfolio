@@ -20,11 +20,14 @@
                 <div class="logo">
                     <img src="/assets/images/KR.png" />
                 </div>
-                <div class="nav-links">
+                <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="nav-links" id="primary-navigation">
                     <a href="#">Home</a>
-                    <a href="#about">About me</a>
+                    <a href="/about.html">About me</a>
                     <a href="#interests">Interests</a>
-                    <a href="#contact" class="nav-contact-btn">Contact Us</a>
+                    <a href="/contact.html" class="nav-contact-btn">Contact Us</a>
                 </div>
             </nav>
         </header>
@@ -36,7 +39,7 @@
                 <img src="/assets/images/me.jpg" alt="Hero image" class="top-image" />
             </section>
 
-            <section class="hero-section" id="about">
+            <section class="hero-section" id="">
                 <br>
                 <h2>About Me</h2>
                 <br>
@@ -128,6 +131,16 @@
     </div>
     <script>
         (function () {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', () => {
+                    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                    navToggle.setAttribute('aria-expanded', String(!isExpanded));
+                    navLinks.classList.toggle('active');
+                });
+            }
 
             const links = document.querySelectorAll('.nav-links a, .quick-links a[href^="#"]');
             links.forEach(link => {
@@ -140,12 +153,14 @@
                             e.preventDefault();
                             targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }
-                    } else if (hash && hash.startsWith('#')) {
+                    }
 
+                    if (navLinks && navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        navToggle.setAttribute('aria-expanded', 'false');
                     }
                 });
             });
-
         })();
     </script>
 </body>
